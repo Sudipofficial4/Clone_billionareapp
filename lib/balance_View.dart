@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:intl/intl.dart';
 
 // ignore: must_be_immutable
 class BalanceView extends StatelessWidget {
@@ -14,7 +15,9 @@ class BalanceView extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Text("Balance part"),
-          Text("$balance"),
+          Text(
+              '\$ ${NumberFormat.simpleCurrency(name: '').format(balance)}', //empty string is provided to remove the dollar sign
+              style: TextStyle(fontSize: 32, fontWeight: FontWeight.bold)),
         ],
       ),
     );
